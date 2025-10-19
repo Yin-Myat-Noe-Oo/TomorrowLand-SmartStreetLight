@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Station Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #0A7075, #0C969C, #274D60);
+            color: white;
+            text-align: center;
+        }
+        .dashboard {
+            width: 80%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .notification-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #F1C40F;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .alert-container {
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .alert-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+            transition: background 0.3s;
+        }
+        .alert-item:hover {
+            background: rgba(192, 57, 43, 0.5);
+        }
+        .alert-icon {
+            font-size: 20px;
+            color: #C0392B;
+            margin-right: 15px;
+        }
+        .alert-text {
+            flex: 1;
+            text-align: left;
+        }
+        .alert-time {
+            font-size: 14px;
+            color: #F1C40F;
+        }
+        .status-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+        }
+        .status-container h2 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .status-info {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <i class="fas fa-bell notification-btn" onclick="showNotifications()"></i>
+        <h1>🔥 Fire Station Dashboard</h1>
+        <div class="alert-container" id="alertContainer"></div>
+        
+        <div class="status-container">
+            <h2>🚒 Emergency Response Status</h2>
+            <div class="status-info">
+                <div>Nearest Fire Truck: <strong id="fireTruck">5 min away</strong></div>
+                <div>Response Status: <strong id="responseStatus">On the way</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fireAlerts = [
+            { location: "73, 107×108 St", time: "5 minutes ago" },
+            { location: "65, 101×102 St", time: "10 minutes ago" },
+            { location: "Theik Pan St", time: "15 minutes ago" },
+            { location: "27, 73×74 St", time: "20 minutes ago" }
+        ];
+
+        function loadAlerts() {
+            const container = document.getElementById("alertContainer");
+            container.innerHTML = "";
+            fireAlerts.forEach(alert => {
+                const alertItem = document.createElement("div");
+                alertItem.classList.add("alert-item");
+                alertItem.innerHTML = `
+                    <i class="fas fa-fire alert-icon"></i>
+                    <div class="alert-text">
+                        <strong>Fire Alert:</strong> Fire reported at ${alert.location}.
+                        <div class="alert-time">${alert.time}</div>
+                    </div>
+                `;
+                container.appendChild(alertItem);
+            });
+        }
+
+        function showNotifications() {
+            alert("You have new fire alerts! Check the dashboard.");
+        }
+
+        window.onload = loadAlerts;
+    </script>
+</body>
+</html>

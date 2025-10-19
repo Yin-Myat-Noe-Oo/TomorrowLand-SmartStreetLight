@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('Background.png') no-repeat center center/cover;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #0A7075;
+        }
+        .notification-item {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+        .notification-item:hover {
+            background: rgba(12, 150, 156, 0.1);
+        }
+        .notification-item i {
+            color: #0A7075;
+            margin-right: 15px;
+        }
+        .notification-text {
+            flex: 1;
+            color: #032F30;
+            font-size: 16px;
+        }
+        .notification-time {
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Notifications for Fire Station </h2>
+        <div class="notification-item">
+            <i class="fas fa-bell"></i>
+            <div class="notification-text">
+                Alert!  There is a fire case at 73 107x108 St. 
+            </div>
+            <div class="notification-time">5 minutes ago</div>
+        </div>
+        <div class="notification-item">
+            <i class="fas fa-bell"></i>
+            <div class="notification-text">
+                Alert!  There is a fire case at 65 101x102 St.            </div>
+            <div class="notification-time">1 hour ago</div>
+        </div>
+        <div class="notification-item">
+            <i class="fas fa-bell"></i>
+            <div class="notification-text">
+                ALert!  There is a fire case at Theik Pan St.            </div>
+            <div class="notification-time">2 hours ago</div>
+        </div>
+        <div class="notification-item">
+            <i class="fas fa-bell"></i>
+            <div class="notification-text">
+                Alert!  There is a fire case at 27 73x74 St.           </div>
+            <div class="notification-time">3 hours ago</div>
+        </div>
+        <div class="notification-item">
+            <i class="fas fa-bell"></i>
+            <div class="notification-text">
+                Alert!  There is a fire case at 28 73x74 St .           </div>
+            <div class="notification-time">3 hours ago</div>
+        </div>
+    </div>
+</body>
+</html>

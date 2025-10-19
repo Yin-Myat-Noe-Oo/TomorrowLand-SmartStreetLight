@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('City.jpg') no-repeat center center/cover;
+            background-size: cover;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            color: #0A7075;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInContainer 1s ease-out;
+        }
+
+        .signup-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 10px 0;
+            animation: fadeInInput 1s ease-out;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0A7075;
+        }
+
+        form input {
+            width: 100%;
+            padding: 12px 10px 12px 35px;
+            margin: 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f7f7f7;
+            color: #333;
+            font-size: 16px;
+            animation: fadeInInputField 1s ease-out;
+        }
+
+        form input::placeholder {
+            color: #aaa;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background: #0A7075;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+            animation: fadeInButton 1s ease-out;
+        }
+
+        form button:hover {
+            background: #087D7A;
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .form-container a {
+            color: #0A7075;
+            text-decoration: none;
+        }
+
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInInput {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInInputField {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInButton {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <div class="form-container">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="input-group">
+                        <i class="bi bi-person-fill"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="bi bi-telephone-fill"></i>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

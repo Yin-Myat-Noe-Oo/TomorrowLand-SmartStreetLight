@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('City.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+        .container {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #0A7075;
+        }
+        .input-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: rgba(211, 211, 211, 0.5); 
+            border-radius: 25px;
+            padding: 10px;
+            backdrop-filter: blur(5px);
+        }
+        .input-field input {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            padding: 10px;
+            color: #032F30;
+            font-size: 16px;
+        }
+        .input-field i {
+            color: #0A7075;
+            margin-right: 10px;
+        }
+        .forgot-password {
+            display: block;
+            margin-bottom: 20px;
+            color: grey;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .login-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: rgba(12, 150, 156, 0.8);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+        .login-btn:hover {
+            background: rgba(39, 77, 96, 0.8);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .input-field {
+            position: relative;
+            width: 100%;
+        }
+    
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .fas {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Email or phone number">
+        </div>
+        <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
+        <div class="input-field">
+            <select>
+                <option value="" disabled selected>Choose an option</option>
+                <option value="1">Fire Station</option>
+                <option value="2">Police Station</option>
+                <option value="3">Health station</option>
+                <option value="4">Garbage station</option>
+
+            </select>
+        </div>
+        <a href="#" class="forgot-password">Forgot your password?</a>
+        <button class="login-btn">Login</button>
+    </div>
+</body>
+</html>

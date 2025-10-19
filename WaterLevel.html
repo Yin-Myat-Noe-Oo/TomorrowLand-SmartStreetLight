@@ -1,0 +1,572 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Font Awesome Cdn -->
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+     <style>
+
+      body{background-color:#274860;
+        .futuristic-card {
+          background: linear-gradient(145deg, #222b45, #1a1f36);
+          border: 1px solid rgba(0, 209, 255, 0.3);
+          box-shadow: 0 5px 20px rgba(0, 209, 255, 0.1);
+          text-align: center;
+          padding: 20px;
+          border-radius: 15px;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+        }
+      
+        .futuristic-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+        }
+      
+        .service-icon {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          margin: 0 auto;
+          transition: transform 0.4s ease;
+        }
+      
+        .service-icon:hover {
+          transform: rotate(10deg);
+        }
+      
+        .futuristic-card {
+          background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+          backdrop-filter: blur(10px); /* Glassmorphism effect */
+          border-radius: 15px; /* Rounded corners */
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          color: #FFFFFF; /* White text */
+        }
+        
+        .futuristic-card:hover {
+          transform: translateY(-10px); /* Lift the card up on hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+        }
+        
+        .futuristic-card img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%; /* Circular image */
+          margin: 0 auto;
+          display: block;
+          transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+        
+        .futuristic-card img:hover {
+          transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        
+        .futuristic-card h3 {
+          font-size: 1.5rem;
+          color: #00D1FF; /* Bright blue color for heading */
+          font-weight: bold;
+          margin-bottom: 15px;
+          transition: color 0.3s ease; /* Smooth color change */
+        }
+        
+        .futuristic-card h3:hover {
+          color: #FFD700; /* Gold color on hover */
+        }
+        
+        .futuristic-card p {
+          font-size: 1rem;
+          color: #D1D1D1; /* Light gray for paragraph text */
+        }
+        
+        .futuristic-card .stretched-link {
+          text-decoration: none; /* Remove underline from link */
+          color: inherit;
+        }
+        
+        .futuristic-card .stretched-link:hover {
+          text-decoration: underline; /* Underline link on hover */
+        }
+        
+        /* Card styles */
+        .card {
+            background: #0A7075;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Card image */
+        .card-img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Card body */
+        .card-body {
+            padding: 20px;
+            background-color: #0C969C;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        
+        .card-body:hover {
+            background-color: #274D60;
+        }
+        
+        /* Card title */
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Card text */
+        .card-text {
+            font-size: 1em;
+            line-height: 1.5;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-body:hover .card-text {
+            opacity: 1;
+        }
+        
+      }
+      /* Footer styles */
+#footer {
+    background-color: #0A7075;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Footer title */
+#footer h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#footer h1 span {
+    color: #0C969C;
+}
+
+/* Footer paragraph */
+#footer p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#footer p:hover {
+    opacity: 1;
+}
+
+/* Social links */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links i {
+    font-size: 2em;
+    margin: 0 15px;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links i:hover {
+    color: #274D60;
+    transform: scale(1.2);
+}
+
+/* Credit section */
+.credit {
+    margin-top: 20px;
+}
+
+.credit a {
+    color: #0C969C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.credit a:hover {
+    color: #274D60;
+}
+
+/* Copyright section */
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copyright:hover {
+    opacity: 1;
+}
+.main-txt {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards; /* Fade-in effect */
+}
+
+.main-txt h1 {
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF; /* White text */
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0;
+  animation: slideIn 1s 0.5s forwards; /* Slide-in animation */
+}
+
+.main-txt h1 span {
+  color: #0C969C; /* Lighter teal for the 'M' */
+  font-weight: bold;
+}
+
+.main-txt h1::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 60px;
+  height: 4px;
+  background-color: #274D60; /* Deep blue underline */
+  border-radius: 5px;
+  transform: scaleX(0); /* Initially hidden underline */
+  transform-origin: center;
+  animation: underlineAnimation 1s 1s forwards; /* Underline animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the h1 */
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Underline animation */
+@keyframes underlineAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to right, #0A7075, #0C969C, #274D60);
+    color: white;
+    overflow-x: hidden;
+}
+.top-section {
+    padding: 60px 20px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.date-time {
+    font-size: 1em;
+    margin-top: 10px;
+}
+.input-container {
+    margin: 30px auto;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.input-container input {
+    width: 60%;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    outline: none;
+}
+.input-container button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.input-container button:hover {
+    background-color: #e68900;
+}
+.water-section {
+    width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.sensor-card {
+    display: none;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    margin: 20px auto;
+    width: 50%;
+}
+.sensor-card.active {
+    display: block;
+}
+.date-time-card {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+.water-status {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.status-normal { color: #27AE60; background: rgba(39, 174, 96, 0.3); }
+.status-high { color: #F1C40F; background: rgba(241, 196, 15, 0.3); }
+.status-rising { color: #E67E22; background: rgba(230, 126, 34, 0.3); }
+.status-flooding { color: #C0392B; background: rgba(192, 57, 43, 0.3); }
+.status-danger { color: #8E44AD; background: rgba(142, 68, 173, 0.3); }
+.status-alert { color: #3498DB; background: rgba(52, 152, 219, 0.3);
+     </style>
+     
+</head>
+<body>
+    
+
+
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #0A7075" id="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" id="logo"><span style="color: rgb(12, 38, 40)">T</span>omorrow<span style="color:rgb(12, 38, 40)">L</span>and</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#book">Contents</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#packages">Services</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#gallary">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+             
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+
+
+
+
+
+    <!-- Home Section Start !-->
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+    <div class="top-section">
+        <h1>Water Level Monitoring</h1>
+        <p>Live Water Level Updates from Sensors</p>
+        <p class="date-time" id="currentDateTime"></p>
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="location-input" placeholder="Enter Your City">
+        <button onclick="showLocation()">Enter</button>
+    </div>
+
+    <div class="water-section">
+        <h2>Live Water Level Status</h2>
+        <div class="sensor-card" data-location="Maharaungmye">
+            <p>Maharaungmye</p>
+            <div class="water-status status-normal">Normal Level</div>
+            <p>Water Level: 1.2m</p>
+            <p>Flow Rate: 50 m³/s</p>
+            <p>Risk: Low</p>
+            <p class="date-time-card" id="MaharaungmyeTime"></p>
+        </div>
+        <div class="sensor-card" data-location="Chanmyatharzi">
+            <p>Chanmyatharzi</p>
+            <div class="water-status status-rising">Rising Level</div>
+            <p>Water Level: 2.5m</p>
+            <p>Flow Rate: 120 m³/s</p>
+            <p>Risk: Moderate</p>
+            <p class="date-time-card" id="ChanmyatharziTime"></p>
+        </div>
+        <div class="sensor-card" data-location="Amarapura">
+            <p>Amarapura</p>
+            <div class="water-status status-rising">Rising Level</div>
+            <p>Water Level: 2.5m</p>
+            <p>Flow Rate: 120 m³/s</p>
+            <p>Risk: Moderate</p>
+            <p class="date-time-card" id="AmarapuraTime"></p>
+        </div>
+    </div>
+
+    <script>
+        function showLocation() {
+            let inputLocation = document.getElementById("location-input").value.trim().toLowerCase();
+            let cards = document.querySelectorAll(".sensor-card");
+            
+            cards.forEach(card => {
+                let location = card.getAttribute("data-location").toLowerCase();
+                if (location === inputLocation) {
+                    card.classList.add("active");
+                    document.getElementById(location + "Time").innerText = "Updated: " + new Date().toLocaleString();
+                } else {
+                    card.classList.remove("active");
+                }
+            });
+        }
+        document.getElementById("currentDateTime").innerText = "Current Time: " + new Date().toLocaleString();
+    </script>
+
+
+
+
+   
+
+    <!-- About End -->
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      <h1><span style="color:rgb(12, 38, 40)">T</span>omorrow<span style="color:rgb(12, 38, 40)">L</span>and</h1>
+      <p>Smart cities: where technology meets innovation for a better tomorrow.</p>
+      <div class="social-links">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+      </div>
+      <div class="credit">
+          <p>Designed By <a href="#" style="color:rgb(12, 38, 40)">Hackastronuts</a></p>
+      </div>
+      <div class="copyright">
+          <p>&copy;Copyright SA Coding. All Rights Reserved</p>
+      </div>
+  </footer>
+  
+    <!-- Footer End -->
+
+
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,733 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Font Awesome Cdn -->
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+     <style>
+
+      body{background-color:#274860;
+        .futuristic-card {
+          background: linear-gradient(145deg, #222b45, #1a1f36);
+          border: 1px solid rgba(0, 209, 255, 0.3);
+          box-shadow: 0 5px 20px rgba(0, 209, 255, 0.1);
+          text-align: center;
+          padding: 20px;
+          border-radius: 15px;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+        }
+      
+        .futuristic-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+        }
+      
+        .service-icon {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          margin: 0 auto;
+          transition: transform 0.4s ease;
+        }
+      
+        .service-icon:hover {
+          transform: rotate(10deg);
+        }
+      
+        .futuristic-card {
+          background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+          backdrop-filter: blur(10px); /* Glassmorphism effect */
+          border-radius: 15px; /* Rounded corners */
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          color: #FFFFFF; /* White text */
+        }
+        
+        .futuristic-card:hover {
+          transform: translateY(-10px); /* Lift the card up on hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+        }
+        
+        .futuristic-card img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%; /* Circular image */
+          margin: 0 auto;
+          display: block;
+          transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+        
+        .futuristic-card img:hover {
+          transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        
+        .futuristic-card h3 {
+          font-size: 1.5rem;
+          color: #00D1FF; /* Bright blue color for heading */
+          font-weight: bold;
+          margin-bottom: 15px;
+          transition: color 0.3s ease; /* Smooth color change */
+        }
+        
+        .futuristic-card h3:hover {
+          color: #FFD700; /* Gold color on hover */
+        }
+        
+        .futuristic-card p {
+          font-size: 1rem;
+          color: #D1D1D1; /* Light gray for paragraph text */
+        }
+        
+        .futuristic-card .stretched-link {
+          text-decoration: none; /* Remove underline from link */
+          color: inherit;
+        }
+        
+        .futuristic-card .stretched-link:hover {
+          text-decoration: underline; /* Underline link on hover */
+        }
+        
+        /* Card styles */
+        .card {
+            background: #0A7075;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Card image */
+        .card-img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Card body */
+        .card-body {
+            padding: 20px;
+            background-color: #0C969C;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        
+        .card-body:hover {
+            background-color: #274D60;
+        }
+        
+        /* Card title */
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Card text */
+        .card-text {
+            font-size: 1em;
+            line-height: 1.5;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-body:hover .card-text {
+            opacity: 1;
+        }
+        
+      }
+      /* Footer styles */
+#footer {
+    background-color: #0A7075;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Footer title */
+#footer h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#footer h1 span {
+    color: #0C969C;
+}
+
+/* Footer paragraph */
+#footer p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#footer p:hover {
+    opacity: 1;
+}
+
+/* Social links */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links i {
+    font-size: 2em;
+    margin: 0 15px;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links i:hover {
+    color: #274D60;
+    transform: scale(1.2);
+}
+
+/* Credit section */
+.credit {
+    margin-top: 20px;
+}
+
+.credit a {
+    color: #0C969C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.credit a:hover {
+    color: #274D60;
+}
+
+/* Copyright section */
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copyright:hover {
+    opacity: 1;
+}
+.main-txt {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards; /* Fade-in effect */
+}
+
+.main-txt h1 {
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF; /* White text */
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0;
+  animation: slideIn 1s 0.5s forwards; /* Slide-in animation */
+}
+
+.main-txt h1 span {
+  color: #0C969C; /* Lighter teal for the 'M' */
+  font-weight: bold;
+}
+
+.main-txt h1::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 60px;
+  height: 4px;
+  background-color: #274D60; /* Deep blue underline */
+  border-radius: 5px;
+  transform: scaleX(0); /* Initially hidden underline */
+  transform-origin: center;
+  animation: underlineAnimation 1s 1s forwards; /* Underline animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the h1 */
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Underline animation */
+@keyframes underlineAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.video-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 120%;
+  height: 85vh;
+  display: block;
+  object-fit: cover;
+}
+     </style>
+     <style>
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    
+      video {
+        width: 100%;
+        height: auto;
+      }
+    
+      .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+    
+      .overlay h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+    
+      .overlay p {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    </style>
+    <style>
+      #navbar {
+        background-color: transparent !important; /* Make the navbar background transparent */
+      }
+      
+      .navbar-nav .nav-link {
+        color: white !important; /* Ensure links are visible on a transparent navbar */
+      }
+      
+      /* Optional: Change the color of the navbar brand */
+      .navbar-brand {
+        color: white !important;
+      }
+      
+      .navbar-toggler-icon {
+        background-color: white; /* Ensure the burger icon is visible */
+      }
+      </style>
+</head>
+<body>
+    
+
+
+
+
+
+   <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+  <div class="container">
+      <a class="navbar-brand" href="index.html" id="logo">
+          <span style="color: rgb(12, 38, 40)">T</span>omorrow
+          <span style="color: rgb(12, 38, 40)">L</span>and
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                  <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#book">Contents</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#packages">Services</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="ContactUs.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="SignUp.html">Sign-Up</a>
+              </li>
+              <li class="nav-item">
+                  <a href="notification.html">
+                      <i class="bi bi-bell" style="color:red;"></i>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+
+
+    <!-- Navbar End -->
+
+
+
+
+    <div class="video-container">
+      <video autoplay loop muted playsinline>
+        <source src="videoplayback.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay">
+        <h1>Welcome to Tomorrowland</h1>
+        <p>"The best way to predict the future is to create it."</p>
+      </div>
+    </div>
+    
+   
+    <!-- Home Section End -->
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+    <!-- Section Services Start -->
+<section class="services"  style="background-color:#274860" id="book">
+      <div class="container">
+
+        <div class="main-txt">
+          <h1><span>M</span>ain Department</h1>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+              <img src="assets/img/fire.png" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+              <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                <a href="firestation.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                  <h3>Smart Fire System</h3>
+                </a>
+                <p>A Smart Fire System uses technology like sensors and AI for early fire detection and efficient emergency response.</p>
+              </div>
+            </div>
+            
+            
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+              <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+                <img src="assets/img/police1.png" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+                <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                  <a href="policestation.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                    <h3>Smart Police System</h3>
+                  </a>
+                  <p>A Smart Police System uses technology like AI and IoT to improve crime detection, prevention, and law enforcement efficiency.</p>                </div>
+              
+            </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+              <img src="assets/img/health.png" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+              <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                <a href="hospital.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                  <h3>Smart Health System</h3>
+                </a>
+                <p>A Smart Health System uses technology to monitor health, provide real-time alerts, and improve healthcare services and patient care.</p>
+              </div>
+            
+          </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+
+            <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+              <img src="assets/img/weather.webp" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+              <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                <a href="WeatherFocus.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                  <h3>Smart Weather Forcasting System</h3>
+                </a>
+                <p>Smart Weather Forcasting System uses technology improve healthcare services and patient care.</p>
+              </div>
+            
+          </div>
+
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+          
+            <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+              <img src="assets/img/transportation.webp" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+              <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                <a href="Transportation.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                  <h3>Smart Traffic Transportation System</h3>
+                </a>
+                <p>A smart traffic transportation system provides real-time updates to drivers for smoother travel.</p>
+              </div>
+            
+          </div>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+
+          
+            <div class="card futuristic-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+              <img src="assets/img/water.png" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: block; transition: transform 0.3s ease;" class="bi bi-activity">
+              <div class="card-bodys" style="color: #FFFFFF; text-align: center;">
+                <a href="WaterLevel.html" style="text-decoration: none; color: #00D1FF; font-weight: bold;" class="stretched-link">
+                  <h3>Smart Water Level System</h3>
+                </a>
+                <p>A smart water level system prevent overflow, detects shortages, and enables automated water management for efficient resource use.</p>
+              </div>
+            
+          </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section>
+  
+    
+    <!-- Section Services End -->
+
+
+    <!-- Section Packages Start -->
+    <section class="packages"  style="background-color:#274860" id="packages">
+      <div class="container">
+        
+        <div class="main-txt">
+          <h1><span>S</span>ervices</h1>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+            <a href="Education_Article.html">
+
+            <div class="card">
+              <img src="assets/img/education.jpg" class="card-img" alt="">
+              <div class="card-body">
+                  <h4 class="card-title">Smart Education</h4>
+                  <p class="card-text">Smart education allows students to learn remotely using digital platforms with online video lessons.</p>
+              </div>
+          </div>
+        </a>
+
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+<a href="News.html">
+            <div class="card">
+              <img src="assets/img/business.webp" alt="">
+              <div class="card-body">
+                <h4>Smart Business</h4>
+                <p>Business involves buying, selling, and producing goods or services to generate profit and meet consumer needs.</p>
+              
+              </div>
+            </div>
+          </a>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+<a href="election.html">
+            <div class="card">
+              <img src="assets/img/voting.jpg" alt="">
+              <div class="card-body">
+                <h3>Smart Election Voting</h3>
+                <p>Smart Election Voting uses technology to streamline the voting process for voters.</p>
+         
+              </div>
+            </div>
+          </a>
+          </div>
+
+
+
+        </div>
+
+
+
+        <div class="row" style="margin-top: 30px;">
+
+          <div class="col-md-4 py-3 py-md-0">
+<a href="Health.html">
+            <div class="card">
+              <img src="assets/img/personalhealth.jpg" alt="">
+              <div class="card-body">
+                <h3>Smart Personal Health</h3>
+                <p>Smart Personal Health involves using wearable devices to better health management and prevention.</p>
+                
+              </div>
+            </div>
+          </a>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+<a href="business.html">
+            <div class="card">
+              <img src="assets/img/news.jpg" alt="">
+              <div class="card-body">
+                <h3>News</h3>
+                <p>News is information about recent events shared through media to keep people informed.oloribus!</p>
+                
+              </div>
+            </div>
+          </a>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+<a href="tax.html">
+            <div class="card">
+              <img src="assets/img/shop.jpg" alt="">
+              <div class="card-body">
+                <h3>Smart Tax System</h3>
+                <p>A tax system  collect revenue from individuals and businesses to fund public services and programs.</p>
+                
+            </div>
+
+          </div>
+        </a>
+
+
+        </div>
+
+
+      </div>
+    </section>
+    <!-- Section Packages End -->
+
+
+
+
+
+
+   
+
+    <!-- About End -->
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      <h1><span style="color:rgb(12, 38, 40)">T</span>omorrow<span style="color:rgb(12, 38, 40)">L</span>and</h1>
+      <p>Smart cities: where technology meets innovation for a better tomorrow.</p>
+      <div class="social-links">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+      </div>
+      <div class="credit">
+          <p>Designed By <a href="#" style="color:rgb(12, 38, 40)">Hackastronuts</a></p>
+      </div>
+      <div class="copyright">
+          <p>&copy;Copyright SA Coding. All Rights Reserved</p>
+      </div>
+  </footer>
+  
+    <!-- Footer End -->
+
+
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

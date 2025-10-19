@@ -1,0 +1,726 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Link -->
+
+
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Font Awesome Cdn -->
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+     <style>
+
+      body{background-color:#274860;
+        .futuristic-card {
+          background: linear-gradient(145deg, #222b45, #1a1f36);
+          border: 1px solid rgba(0, 209, 255, 0.3);
+          box-shadow: 0 5px 20px rgba(0, 209, 255, 0.1);
+          text-align: center;
+          padding: 20px;
+          border-radius: 15px;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+        }
+      
+        .futuristic-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+        }
+      
+        .service-icon {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          margin: 0 auto;
+          transition: transform 0.4s ease;
+        }
+      
+        .service-icon:hover {
+          transform: rotate(10deg);
+        }
+      
+        .futuristic-card {
+          background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+          backdrop-filter: blur(10px); /* Glassmorphism effect */
+          border-radius: 15px; /* Rounded corners */
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          color: #FFFFFF; /* White text */
+        }
+        
+        .futuristic-card:hover {
+          transform: translateY(-10px); /* Lift the card up on hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+        }
+        
+        .futuristic-card img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%; /* Circular image */
+          margin: 0 auto;
+          display: block;
+          transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+        
+        .futuristic-card img:hover {
+          transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        
+        .futuristic-card h3 {
+          font-size: 1.5rem;
+          color: #00D1FF; /* Bright blue color for heading */
+          font-weight: bold;
+          margin-bottom: 15px;
+          transition: color 0.3s ease; /* Smooth color change */
+        }
+        
+        .futuristic-card h3:hover {
+          color: #FFD700; /* Gold color on hover */
+        }
+        
+        .futuristic-card p {
+          font-size: 1rem;
+          color: #D1D1D1; /* Light gray for paragraph text */
+        }
+        
+        .futuristic-card .stretched-link {
+          text-decoration: none; /* Remove underline from link */
+          color: inherit;
+        }
+        
+        .futuristic-card .stretched-link:hover {
+          text-decoration: underline; /* Underline link on hover */
+        }
+        
+        /* Card styles */
+        .card {
+            background: #0A7075;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Card image */
+        .card-img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Card body */
+        .card-body {
+            padding: 20px;
+            background-color: #0C969C;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        
+        .card-body:hover {
+            background-color: #274D60;
+        }
+        
+        /* Card title */
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Card text */
+        .card-text {
+            font-size: 1em;
+            line-height: 1.5;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-body:hover .card-text {
+            opacity: 1;
+        }
+        
+      }
+      /* Footer styles */
+#footer {
+    background-color: #0A7075;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+/* Footer title */
+#footer h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#footer h1 span {
+    color: #0C969C;
+}
+
+/* Footer paragraph */
+#footer p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#footer p:hover {
+    opacity: 1;
+}
+
+/* Social links */
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links i {
+    font-size: 2em;
+    margin: 0 15px;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links i:hover {
+    color: #274D60;
+    transform: scale(1.2);
+}
+
+/* Credit section */
+.credit {
+    margin-top: 20px;
+}
+
+.credit a {
+    color: #0C969C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.credit a:hover {
+    color: #274D60;
+}
+
+/* Copyright section */
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copyright:hover {
+    opacity: 1;
+}
+.main-txt {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards; /* Fade-in effect */
+}
+
+.main-txt h1 {
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF; /* White text */
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0;
+  animation: slideIn 1s 0.5s forwards; /* Slide-in animation */
+}
+
+.main-txt h1 span {
+  color: #0C969C; /* Lighter teal for the 'M' */
+  font-weight: bold;
+}
+
+.main-txt h1::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 60px;
+  height: 4px;
+  background-color: #274D60; /* Deep blue underline */
+  border-radius: 5px;
+  transform: scaleX(0); /* Initially hidden underline */
+  transform-origin: center;
+  animation: underlineAnimation 1s 1s forwards; /* Underline animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the h1 */
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Underline animation */
+@keyframes underlineAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #06969c, #0A7075, #274D60);
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Top Section Styling */
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.top-section .text {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.top-section h1 {
+    font-size: 3.5em;
+    color: #274D60;
+    margin-bottom: 20px;
+}
+
+.top-section p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.top-section .image img {
+    width: 280px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 15px 30px;
+    background: #06969c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #0A7075;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Section */
+.container {
+    width: 80%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.container h2 {
+    font-size: 2.5em;
+    color: #06969c;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.content {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.content .text {
+    width: 50%;
+}
+
+.content img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.content ul {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.content ul li:before {
+    content: '✔️';
+    margin-right: 10px;
+    color: #06969c;
+}
+
+/* Icons Section */
+.icons-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.icon-box {
+    background:rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.icon-box h3 {
+    font-size: 1.5em;
+    color: #06969c;
+    margin-bottom: 10px;
+}
+
+.icon-box p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Category Cards Section */
+.category-cards-frame {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.category-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.category-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 200px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.category-card h4 {
+    font-size: 1.5em;
+    color: #06969c;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Added 'Learn More' Button for Category Cards */
+.category-card .learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #06969c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.category-card .learn-more:hover {
+    background-color: #0A7075;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+     </style>
+     
+</head>
+<body>
+    
+
+
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #0A7075" id="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" id="logo"><span style="color: rgb(12, 38, 40)">T</span>omorrow<span style="color:rgb(12, 38, 40)">L</span>and</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span><i class="fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#book">Contents</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#packages">Services</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#gallary">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+             
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+
+
+
+
+
+       <!-- Top Section -->
+       <div class="top-section">
+        <div class="text">
+            <h1>Smart Education</h1>
+            <p>The Rise of Smart Education: Harnessing Digital Tools for a New Era of Learning</p>
+            <a href="#" class="button">Start Reading</a>
+        </div>
+        <div class="image">
+            <img src="edu3.jpeg" alt="Header Image">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>The Rise of Smart Education</h2>
+        <div class="content">
+            <div class="text">
+                <p>Smart education is revolutionizing the way we learn. With the help of digital tools like AI, VR, AR, and cloud-based platforms, education is becoming more interactive, personalized, and accessible to all.</p>
+            </div>
+            <img src="edu.png" alt="Smart Education Image">
+        </div>
+
+        <div class="content">
+            <div class="text">
+                <p>Technology in education empowers teachers and students to collaborate, explore new ways of learning, and foster deeper understanding through virtual environments, interactive lessons, and personalized learning paths.</p>
+            </div>
+            <img src="edu2.jpeg" alt="Technology Image">
+        </div>
+
+        <div class="icons-section">
+            <div class="icon-box">
+                <h3>Access to Information</h3>
+                <p>Digital tools provide vast learning resources and materials at the fingertips of students everywhere.</p>
+            </div>
+            <div class="icon-box">
+                <h3>Interactive Learning</h3>
+                <p>Interactive lessons make learning more engaging and effective for students of all ages.</p>
+            </div>
+            <div class="icon-box">
+                <h3>Global Collaboration</h3>
+                <p>Students and educators can connect globally to share knowledge, ideas, and experiences.</p>
+            </div>
+        </div>
+
+        <a href="#" class="button">Learn More</a>
+    </div>
+
+    <!-- Category Cards Section -->
+    <div class="category-cards-frame">
+        <p> You can register and learn from online for these Universities and Classes. </p> 
+        <div class="category-cards">
+            <div class="category-card">
+                <img src="wallStreet.png" alt="Category 1">
+                <h4>Wall Street English</h4>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="category-card">
+                <img src="TheSpace.jpeg" alt="Category 2">
+                <h4>The Space Language Academy</h4>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="category-card">
+                <img src="SFU.png" alt="Category 3">
+                <h4>Strategy First University</h4>
+                <a href="#" class="learn-more">Learn More</a>
+            </div> 
+            <div class="category-card">
+                <img src="Auston.jpg" alt="Category 4">
+                <h4>Auston University</h4>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </div> 
+    </div>
+
+
+
+   
+
+    <!-- About End -->
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      <h1><span style="color:rgb(12, 38, 40)">T</span>omorrow<span style="color:rgb(12, 38, 40)">L</span>and</h1>
+      <p>Smart cities: where technology meets innovation for a better tomorrow.</p>
+      <div class="social-links">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-pinterest-p"></i>
+      </div>
+      <div class="credit">
+          <p>Designed By <a href="#" style="color:rgb(12, 38, 40)">Hackastronuts</a></p>
+      </div>
+      <div class="copyright">
+          <p>&copy;Copyright SA Coding. All Rights Reserved</p>
+      </div>
+  </footer>
+  
+    <!-- Footer End -->
+
+
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
